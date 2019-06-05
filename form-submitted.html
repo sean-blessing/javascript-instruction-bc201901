@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Data Retrieval</title>
+    <script type="text/javascript">
+        function getUrlParam(param)
+        {
+            param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
+            var regex = new RegExp("[?&]" + param + "=([^&#]*)");
+            var url   = decodeURIComponent(window.location.href);
+            var match = regex.exec(url);
+            return match ? match[1] : "";
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Form Data:</h1>
+    <div name="formDiv" id="formDiv">
+        form stuff goes here...
+    </div>
+    <script type="text/javascript">
+        let fName = getUrlParam("fName");
+        console.log("fName = "+fName);
+        document.getElementById("formDiv").innerHTML=fName;
+    </script>
+</body>
+</html>
