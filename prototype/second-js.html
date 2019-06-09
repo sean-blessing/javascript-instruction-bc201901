@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text Fields</title>
+    <script type="text/javascript">
+        "use strict";
+        function displayInput() {
+            console.log("displayInput() called...");
+            let inpCntl = document.getElementById("myInput");
+            let inpText = inpCntl.value;
+            let outCntl = document.getElementById("myOutput");
+            outCntl.value = inpText;
+            console.log(inpText);
+        }
+    </script>
+</head>
+<body>
+    <p>On this page we will set the value of a text field 
+        using input from another text field.
+    </p>
+    <label>Input:</label><input id='myInput' type="text">
+    <button onclick='displayInput()'>Do it!</button>
+    <label>Result:</label><input id='myOutput' type="text">
+
+</body>
+</html>
