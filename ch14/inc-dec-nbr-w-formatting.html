@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <button id="minus" onclick="changeNbr(-1)">-</button> 
+   <input id="theNbr" type="text" value="0" size="5"
+    style="font-size:2em" maxlength="5">
+   <button id="plus" onclick="changeNbr(1)">+</button>
+   <script>
+       let nbr = 0;
+        // defined changeNbr function
+        function changeNbr(changeVal) {
+            nbr = nbr + Number(changeVal);
+            console.log("nbr = "+nbr);
+            let nbrCtrl = document.getElementById("theNbr");
+            nbrCtrl.value = nbr;
+            // set color style based on even / odd
+            let evenOdd = nbr % 2;
+            nbrCtrl.style.color = "black";
+            nbrCtrl.style.fontStyle = "normal";
+            nbrCtrl.style.fontSize = "2em";
+            if (evenOdd==0) {
+                // even
+                //nbrCtrl.style.color = "red";
+                nbrCtrl.style.cssText+="color:red"; // this works too
+                //nbrCtrl.style.setProperty("color","red"); // this too!
+            }
+            if (nbr % 3 == 0) {
+                nbrCtrl.style.fontStyle = "italic";
+            }
+            if (nbr % 7 == 0) {
+                nbrCtrl.style.fontSize = "2.5em";
+            }
+        }
+   </script>
+</body>
+</html>
